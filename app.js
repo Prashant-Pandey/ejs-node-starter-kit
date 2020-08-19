@@ -4,12 +4,13 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var mongoose = require("mongoose");
+require('dotenv').config();
 
 var indexRouter = require("./routes/index");
 var productsRouter = require("./routes/productsRoutes");
 
 mongoose.connect(
-  "mongodb+srv://Mobility:Password1@mobility-dvxsj.mongodb.net/mobility?retryWrites=true&w=majority"
+  process.env.MONGO_URI
 );
 
 var app = express();
