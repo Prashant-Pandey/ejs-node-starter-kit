@@ -6,14 +6,13 @@ phases:
     runtime-versions:
       nodejs: 10  
     commands:
-      - echo Installing Mocha...
-      - npm install -g mocha
+      - echo Can install anything, globally
   pre_build:
     commands:
       - npm install
   build:
     commands:
-      - npm start
+      - node ./bin/www
   post_build:
     commands:
       - echo Build completed on `date`
